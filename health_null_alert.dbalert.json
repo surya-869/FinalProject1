@@ -1,0 +1,27 @@
+{
+  "evaluation": {
+    "source": {
+      "name": "row_count",
+      "display": "row_count",
+      "aggregation": "AGGREGATION_UNSPECIFIED"
+    },
+    "comparison_operator": "IS_NOT_NULL",
+    "threshold": {
+      "value": {
+        "string_value": ""
+      }
+    },
+    "notification": {
+      "retrigger_seconds": 0,
+      "notify_on_ok": true
+    }
+  },
+  "schedule": {
+    "quartz_cron_schedule": "44 0 2 * * ?",
+    "timezone_id": "Asia/Kolkata"
+  },
+  "query_lines": [
+    "SELECT COUNT(*) AS row_count\r",
+    "FROM processed_outputs.curated.health_metrics;"
+  ]
+}
